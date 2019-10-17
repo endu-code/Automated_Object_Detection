@@ -1,0 +1,34 @@
+  Summary for ROBCONT1:
+  Grade Incomplete only 0 packets
+
+                   Comm. Processor             Main Processor
+  Member name   Count  Min  Mean   Max     Count  Min  Mean   Max
+      NONAME2       0     0     0     0        0     0     0     0 
+
+  Total Packets           0
+  COMM CPU  Mean          0 us
+  COMM CPU  Maximum       0 us
+  MAIN CPU  Mean          0 us
+  MAIN CPU  Maximum       0 us
+
+ROBCONT1 V********/ÿ is OffLine 
+  This robot 
+
+NONAME2 V********/ÿ is OffLine 
+  Number of resends                         0
+  Duplicate receives                        0
+  Network errors                            0
+  General error                             0
+  Receive Sequence number                   0
+  Send Sequence number                      0
+  Length of recv queue                      0
+  Length of send queue                      0
+  COMM CPU Minimum communications time  3000000 us
+  COMM CPU Maximum communications time      0 us
+  COMM CPU Mean    communications time      0 us
+  MAIN CPU Minimum communications time  3000000 us
+  MAIN CPU Maximum communications time      0 us
+  MAIN CPU Mean    communications time      0 us
+  MAIN CPU Packet count                     0
+
+ Ntick       Tick  Toff  Meas   Fit   Err   Adj   cst   htt   sst  sest   Slope         Near  Force OK   Diff  NTO

@@ -1,0 +1,34 @@
+                       TP Accounting
+
+F Number: F00000    
+VERSION : HandlingTool         
+$VERSION: V8.30261      5/21/2018
+DATE:     12-FEB-19 15:25 
+
+Menu                         Elapsed Time         #Sel       #Keys
+                     (YY-MM-DD HH:MM:SS)
+Id:  962, 1                          08            1           2
+Id:  936, 1                          16            1           0
+Hints                                36           57          34
+DCS                            01:34:48           40          90
+Id:  381, 5                 27 23:55:40          120          25
+EDIT                           05:06:10           74       10376
+File                              01:12            1          95
+SELECT                            02:04           13         138
+EDIT                                 06            2          13
+Cell Intface                         22            7          24
+Digital                           01:56            2          37
+Registers                            12            3          13
+Frame Offset                         26            4          21
+Frames                            03:16            1          17
+
+Full Menus:                 28 06:47:12 
+Quick Menus:                         00 
+
+MENU Popup:                                       49
+[ TYPE ] Pullup:                                   0
+
+Functions at COLD start
+
+Functions at CTRL start
+START (COLD)                                       1

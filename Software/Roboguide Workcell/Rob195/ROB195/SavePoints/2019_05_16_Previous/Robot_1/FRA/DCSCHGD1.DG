@@ -1,0 +1,155 @@
+F Number: F00000    
+VERSION : HandlingTool         
+$VERSION: V8.30261      5/21/2018
+DATE:     14-JAN-19 08:38 
+DCS Version: V3.5.13
+
+
+--- Collaborative robot ----------------
+Enable/Disable: ENABLE              OK 
+Force sensor
+  Serial number:               0    OK 
+Group:                        1     OK 
+External force(N) /Disabling input
+Limit 1:   150.00   ---[  0]        OK 
+Limit 2:     0.00   ---[  0]        OK 
+Limit 3:     0.00   ---[  0]        OK 
+Limit 4:     0.00   ---[  0]        OK 
+Escape:    300.00                   OK 
+Payload change distance (mm)
+                 +Limit  -Limit 
+             X:    0.00    0.00     OK 
+             Y:    0.00    0.00     OK 
+             Z:    0.00    0.00     OK 
+Rotation limit(deg):         .20    OK 
+      Enabling input:   ON [  0]    OK 
+Password for CONFIRM:   ENABLE      OK 
+CONFIRM by DI:          DISABLE     OK 
+Speed limit:    250.00 [mm/s]       OK 
+Use Payload Comp:       DISABLE     OK 
+  Contact Stop enable:   ---[  0]   OK 
+  SAFE:                  ---[  0]   OK 
+  STOP:                  ---[  0]   OK 
+  ESCP:                  ---[  0]   OK 
+  In Payload chg dist:   ---[  0]   OK 
+--- Payload setup ----------------------
+PAYLOAD   1
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   2
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   3
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   4
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   5
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   6
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   7
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   8
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD   9
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+PAYLOAD  10
+  PAYLOAD   [kg]           35.00   CHGD
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+  INERTIA X [kg cm^2]       0.00    OK 
+  INERTIA Y [kg cm^2]       0.00    OK 
+  INERTIA Z [kg cm^2]       0.00    OK 
+ARM LOAD #3
+  PAYLOAD   [kg]            0.00    OK 
+  CENTER X  [cm]           -3.50    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            8.00    OK 
+ARM LOAD #0
+  PAYLOAD   [kg]            0.00    OK 
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+ARM LOAD #0
+  PAYLOAD   [kg]            0.00    OK 
+  CENTER X  [cm]            0.00    OK 
+  CENTER Y  [cm]            0.00    OK 
+  CENTER Z  [cm]            0.00    OK 
+Gravity vector
+    X  [mm/(s*s)]           0.00   CHGD
+    Y  [mm/(s*s)]           0.00    OK 
+    Z  [mm/(s*s)]        9800.00   CHGD
+Speed limit for push to escape
+    J1 [deg/s]              9.00    OK 
+    J2 [deg/s]              9.00    OK 
+Monitor inverval(ms):        500    OK 
+Vibration limit(N):        30.00    OK 
+Payload error limit(N):    60.00    OK 
+Status chk error lim(N):   60.00    OK 
+Status chk time lim(s):    90.00    OK 
+filter length(ms):            32    OK 
+
+--- Signature number (Dec) -------------
+                Current        Latch
+1 Total:         929946368            0
+  Time:14-JAN-19 08:38              None
+2 Base:          209202290            0
+  Time:14-JAN-19 08:38              None
+3 Pos./Speed:   1466313423            0
+  Time:14-JAN-19 08:38              None
+4 I/O connect: -2081399219            0
+  Time:14-JAN-19 08:38              None
+

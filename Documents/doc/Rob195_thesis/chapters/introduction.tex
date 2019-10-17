@@ -1,0 +1,21 @@
+\chapter{Introduction}
+\label{chap:introduction}
+\setstretch{1.5}
+Collaborative robots are meant to be flexible and easy to be reprogrammed so that they can be used efficiently in the modern industrial environment. One of the most important aspects for collaborative robots is safety. The robot shall not cause any harm to people or material. 
+Currently there are three different types \cite{robotiq}  how the workspace of robots is monitored and protected from collisions:
+
+\begin{itemize}
+	\item Safety monitored stop: Scanners detect humans and objects inside the workspace of the robot and force a stop of any robot motion. This means the robot is not collaborative.
+	\item Speed and separation monitoring: Scanners detect humans and objects inside certain areas around the robot and adjust the speed of the robot when the human comes closer to the robot. This leads to a stop of any robot motion when the human is coming too close to the robot. This is also referred to as cooperative operation.
+	\item Power and force limiting: The robot is equipped with force and torque sensor to detect any abnormal forces applied to the robot body. Detecting such a force leads to a stop any robot motion. This type is called collaborative robot.Collisions can also be detected via a  sensitive skin on the robot. The skins can be pressure sensisitive or capacitive. The latter can detect flesh (they typically can not differentiate between a living human and a sausage) within a cm or two next to the skin. 
+\end{itemize}
+	
+%	https://blog.robotiq.com/what-does-collaborative-robot-mean
+Robots that rely on force sensors to detect collisions only recognize them and thus stopping any motion when the collision is already taking place. In a collaborative situation, the robot acts within a dynamic workspace and containers with liquids or heavy unstable objects may obstruct the workspace. These objects may be tipped over by the robot without triggering a halt or the halt could be triggered too late based on the force sensors, which could pose a health risk.
+In addition, halts caused by the force sensors cause downtime in the production process which leads to higher production costs and longer production times, which companies like to avoid.
+The goal of this thesis is to develop a vision system, which detects in real-time any occupied area in the workspace, that means people or objects which are within reach of the robot, and adapts the robots trajectories to avoid any collisions, thus providing an extra layer of safety. This would allow the robot to work in a modifiable workspace together with a human and to adapt his movements according to the human ones \cite{work_desc}. 
+
+GPU-Voxels \cite{GPU-Voxels} is a similar project, that already has a vision system implemented to monitor the surroundings of various robots. It is mostly used in mobile robotics but has some implementations with an collaborative robots.
+
+Commercially available camera based systems like the Pilz SafetyEye \cite{pilz} can recognize changes in the robot environment, however they do not have any capabilities to modify the robot's path.
+

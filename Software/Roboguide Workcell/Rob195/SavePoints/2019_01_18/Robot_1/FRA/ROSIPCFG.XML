@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ROSIPCFG>
+ <ROBOTRING count="2" timeslot="400">
+  <MEMBER name="ROBCONT1" ipadd="147.87.144.251" />
+  <MEMBER name="NONAME2" ipadd="147.87.144.252" />
+ </ROBOTRING>
+</ROSIPCFG>

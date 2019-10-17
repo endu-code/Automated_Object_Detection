@@ -1,0 +1,10 @@
+[PROGRAM]
+NAME="IRVCALDATA"
+ARGUMENT='4'
+[ARGUMENT]
+S01="数据名称"
+V02="相机坐标系":'1', 
+    "激光坐标系":'2'
+N03="输出 PR"
+N04="状态 R"
+[ENDPROGRAM]

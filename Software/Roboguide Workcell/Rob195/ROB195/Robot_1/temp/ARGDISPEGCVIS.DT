@@ -1,0 +1,10 @@
+[PROGRAM]
+NAME="IRVCALDATA"
+ARGUMENT='4'
+[ARGUMENT]
+S01="Data Name"
+V02="Camera Frame":'1', 
+    "Laser Frame":'2'
+N03="Output PR"
+N04="Status Reg"
+[ENDPROGRAM]

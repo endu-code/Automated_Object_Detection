@@ -1,0 +1,7 @@
+ Net Tick +us  Delta uS  NULL  Type Sq      Message
+    2712   20004000     0 [rosip_baseinit] ROS Ethernet Packets version 2/12/2010 (V8.30261      5/21/2018)
+    2712          0     0 ALL [init_tracking]  2  members
+    2712          0     0 ALL [init_tracking]  0 is ROBCONT1
+    2712          0     0 ALL [init_tracking] getaddr 0  0xFB905793, 0x28955793
+    2712          0     0 ALL [init_tracking] not in sync mode
+    2712          0     0 ALL [init_tracking]  1 is NONAME2

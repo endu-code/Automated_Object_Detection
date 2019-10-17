@@ -1,0 +1,16 @@
+ERRMOT.LS      Robot Name ROBOT 12-FEB-19 10:07:58  
+
+1" 12-FEB-19 10:06:10 " SRVO-012 Power failure recovery                   " " WARN                          00000100" 
+2" 18-JAN-19 13:07:26 " MOTN-170 Load is close to capacity                " " WARN                          00000000" 
+3" 18-JAN-19 13:07:06 " MOTN-170 Load is close to capacity                " " WARN                          00000000" 
+4" 18-JAN-19 13:07:02 " MOTN-170 Load is close to capacity                " " WARN                          00000000" 
+5" 18-JAN-19 13:05:46 " MOTN-017 Limit error (G:1, A:2)                   " DATA     0   3   0    0   0        0              " STOP.G                        00100110" 
+6" 18-JAN-19 13:05:46 " MOTN-170 Load is close to capacity                " " WARN                          00000000" 
+7" 18-JAN-19 13:05:26 " MOTN-017 Limit error (G:1, A:2)                   " DATA     0   3   0    0   0        0              " STOP.G                        00100110" 
+8" 18-JAN-19 13:05:12 " MOTN-017 Limit error (G:1, A:2)                   " DATA     0   3   0    0   0        0              " STOP.G                        00100110" 
+9" 18-JAN-19 13:05:12 " MOTN-170 Load is close to capacity                " " WARN                          00000000" 
+10" 18-JAN-19 12:59:28 " SRVO-012 Power failure recovery                   " " WARN                          00000100" 
+11" 18-JAN-19 12:49:30 " SRVO-012 Power failure recovery                   " " WARN                          00000100" 
+12" 17-JAN-19 13:15:54 " SRVO-012 Power failure recovery                   " " WARN                          00000100" 
+13" 17-JAN-19 13:08:02 " SRVO-012 Power failure recovery                   " " WARN                          00000100" 
+14" 14-JAN-19 08:38:44 " SRVO-012 Power failure recovery                   " " WARN                          00000100" 

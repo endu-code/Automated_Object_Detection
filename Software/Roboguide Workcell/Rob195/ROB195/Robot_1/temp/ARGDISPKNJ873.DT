@@ -1,0 +1,13 @@
+{* -*-coding:shift_jis-*-}
+{Basic}
+
+[PROGRAM]
+NAME = "TRANSROT"
+ARGUMENT = '5'
+[ARGUMENT]
+N01 = "”cŽ“_ PR”Ô†"
+N02 = "Œ³•â³—Ê VR”Ô†"
+N03 = "•½sˆÚ“® VR”Ô†"
+N04 = "‰ñ“]ˆÚ“® VR”Ô†"
+N05 = "½Ã°À½ Ú¼Þ½À”Ô†"
+[ENDPROGRAM]

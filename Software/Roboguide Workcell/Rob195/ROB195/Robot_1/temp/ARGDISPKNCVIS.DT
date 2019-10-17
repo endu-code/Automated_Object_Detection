@@ -1,0 +1,10 @@
+[PROGRAM]
+NAME="IRVCALDATA"
+ARGUMENT='4'
+[ARGUMENT]
+S01="ﾃﾞｰﾀ名"
+V02="ｶﾒﾗ座標系":'1', 
+    "ﾚｰｻﾞ座標系":'2'
+N03="出力位置ﾚｼﾞｽﾀ"
+N04="ｽﾃｰﾀｽﾚｼﾞｽﾀ"
+[ENDPROGRAM]

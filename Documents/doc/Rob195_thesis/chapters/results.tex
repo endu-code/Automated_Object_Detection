@@ -1,0 +1,16 @@
+\chapter{Results and outlook}
+\label{chap:results}
+
+\subsubsection{Robot communication and robot movements} 
+A first result was achieved by establishing a communication with the robot. The system is able to read the current cartesian position of the robot and write a new position into the position register of the robot controller. The communication is part of the program which runs on the robot. This program implements a sequential communication which has a strict order which needs to be followed, otherwise the system and the robot will end up not communicating with each other. As a first step to improve the collision avoidance system, a more dynamic communication should be implemented. This could be done by additionally sending communication flags from the system to the robot. These flags could then trigger the read, write or move command.
+
+The robot movements are currently limited to linear movements, since the raycasting of movements from start to endpoint is the limiter. A way to implement joint movements could be, by dividing the joint movements in small fractions, calculate the cartesian positions of each fraction and check for collisions along these fractions before executing the joint movement.
+
+\subsubsection{Cameras and data acquisition}
+Currently, the workspace is monitored with two cameras. However, it was revealed that two cameras are not enough because if the robot is positioned in front of a camera a shadow is casted on behind objects and necessary data is lost. To avoid this data loss it is suggested to use more cameras since the infrared structure of each camera interferes with each other. it would be best if each camera can be triggered separately in order to avoid interference. Alternatively a photogrammetry based system could be used to avoid having problems with the IR pattern.  A second problem encountered with the current cameras, is the unstable connection over the USB cable. This was expected since one of the cameras needed a long (5m) cable to reach the computer where the system runs. To avoid having long USB cables, cameras with Ethernet connection are suggested. 
+
+\subsubsection{Point cloud and map generation}
+The two cameras deliver a point cloud which reaches all necessary specifications in order to create an occupancy grid. The PCL would have many more functions in order to improve noise reduction and achive a more accurate mapping process. The map currently has the robot model included as occupied cells. This leads to faulty collision predictions with the robot model, especially in movements along the Z-axis. Removing the robot model from the map would solve this problem.
+
+\subsubsection{Collision avoidance}
+A simple object detection and collision avoidance was realised using the octomaps raycasting function. Therefore the system is able to detect objects in a straight path of the current position of the robot to its next position. This only regards the tool center point, collisions with any part of the robot body and the object are not detected. In order to have an industrial application it is necessary to implement a collision detection for the whole robot body. This task would need further research.

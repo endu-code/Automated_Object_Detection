@@ -1,0 +1,10 @@
+GigE log
+------------------------------
+29-MAR-19 10:25  : Starting GigE
+29-MAR-19 10:25  : Adding Defn (FR:\B_SCA640.CAM), 0
+29-MAR-19 10:25  : Adding Defn (FR:\D_M640.CAM), 0
+29-MAR-19 10:25  : Adding Defn (FR:\D_M1400.CAM), 0
+29-MAR-19 10:25  : Adding Defn (FR:\B_ACA640.CAM), 0
+29-MAR-19 10:25  : Adding Defn (FR:\B_ACA1300.CAM), 0
+29-MAR-19 10:25  : Adding Defn (FR:\B_SCA640_V3.CAM), 0
+29-MAR-19 10:25  : RPtr = 9DB42B8, GVCP PCB ptr = 9DB57C8, GIGE_ROOT=826670

@@ -1,0 +1,105 @@
+\lstset{language=Pascal,
+	basicstyle=\ttfamily,
+	numbers=left,
+	stepnumber=1,
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	commentstyle=\color{green},
+	morecomment=[l][\color{magenta}]{\#}
+}     
+
+\chapter{KAREL Write - code}
+\label{app:karelwrite}
+\begin{lstlisting}[frame = single, label={lst:karelread}]  
+PROGRAM test_write_c
+%STACKSIZE = 4000
+%NOLOCKGROUP
+%NOPAUSE=ERROR+COMMAND+TPENABLE
+%ENVIRONMENT uif
+%ENVIRONMENT sysdef
+%ENVIRONMENT memo
+%ENVIRONMENT kclop
+%ENVIRONMENT bynam
+%ENVIRONMENT fdev
+%ENVIRONMENT flbt
+%ENVIRONMENT REGOPE
+%INCLUDE klevccdf
+%INCLUDE klevkeys
+%INCLUDE klevkmsk
+-------------------------------------------------------------------------------
+VAR
+file_var   : FILE
+tmp_int   : INTEGER
+tmp_int1  : INTEGER
+tmp_str   : STRING[128]
+STATUS  : INTEGER
+entry   : INTEGER
+n_j_pos : JOINTPOS6     -- position of robot joints to go to, IMPORTANT: JOINTPOSX must be defined, just using JOINTPOS results in uninitialized variable error. X marks the number of Joints.
+new_pos : XYZWPR
+stat_   : INTEGER     -- status variable
+n_real_array : ARRAY[6] OF REAL  -- REAL Array
+indx   : INTEGER    --for counter
+group_no: INTEGER
+CONST
+
+MOVE_PREG = 90			-- POS Register Number wich will be used to store the JointPos
+WRITE_FLAG = 199
+READ_FLAG = 200
+-------------------------------------------------------------------------------
+BEGIN
+group_no = 1
+--Setze $UTOOL $UFRAME mit aktuell im TP eingestellten UT und UF
+$GROUP[group_no].$UFRAME = $MNUFRAME[group_no, $MNUFRAMENUM[group_no]]
+$GROUP[group_no].$UTOOL = $MNUTOOL[group_no, $MNUTOOLNUM[group_no]]
+new_pos = CURPOS(0,0)
+--SET_POS_REG(MOVE_PREG, new_pos, STATUS)
+FORCE_SPMENU(TP_PANEL,SPI_TPUSER,1)
+WRITE TPDISPLAY (CHR(128),CHR(137))
+SET_FILE_ATR(file_var, ATR_IA)
+-- set the server port before doing a connect
+SET_VAR(entry, '*SYSTEM*','$HOSTS_CFG[4].$SERVER_PORT',59003,STATUS)
+WRITE TPDISPLAY('Connecting..',CR)
+MSG_CONNECT('S4:',STATUS)
+WRITE TPDISPLAY(' CONNECT STATUS = ',STATUS,CR)
+IF STATUS = 0 THEN
+-- Open S4:
+WRITE TPDISPLAY('Opening',CR)
+--   FOR tmp_int1 = 1 TO 20 DO
+OPEN FILE file_var ('rw','S4:')
+STATUS = IO_STATUS(file_var)
+WRITE TPDISPLAY(STATUS,CR)
+IF STATUS = 0 THEN
+-- write an integer
+WRITE TPDISPLAY('Reading',CR)
+
+-- Read 10 bytes
+
+FOR indx = 1 TO 6 DO
+BYTES_AHEAD(file_var, entry, STATUS)
+READ file_var (tmp_str::126)
+WRITE TPDISPLAY('receive:',tmp_str,CR )
+CNV_STR_REAL(tmp_str, n_real_array[indx])
+--              n_real_array[indx] = tmp_str
+--		READ file_var (n_real_array[indx]::126,CR)
+WRITE TPDISPLAY('2.receive:',n_real_array[indx],CR )
+ENDFOR
+new_pos.X = n_real_array[1]
+new_pos.Y = n_real_array[2]
+new_pos.Z = n_real_array[3]
+new_pos.W = n_real_array[4]
+new_pos.P = n_real_array[5]
+new_pos.R = n_real_array[6]
+WRITE TPDISPLAY('New Positions:',new_pos, CR)
+SET_POS_REG(MOVE_PREG, new_pos, STATUS)
+
+CLOSE FILE file_var
+ENDIF
+
+WRITE TPDISPLAY('Disconnecting..',CR)
+MSG_DISCO('S4:',STATUS)
+WRITE TPDISPLAY('Done.',CR)
+SET_INT_REG(WRITE_FLAG, 0, STATUS)
+SET_INT_REG(READ_FLAG, 0, STATUS)
+ENDIF
+END test_write_c
+\end{lstlisting}

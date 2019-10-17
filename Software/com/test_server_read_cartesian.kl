@@ -1,0 +1,92 @@
+PROGRAM test_read_c
+%STACKSIZE = 4000
+%NOLOCKGROUP
+%NOPAUSE=ERROR+COMMAND+TPENABLE
+%ENVIRONMENT uif
+%ENVIRONMENT sysdef
+%ENVIRONMENT memo
+%ENVIRONMENT kclop
+%ENVIRONMENT bynam
+%ENVIRONMENT fdev
+%ENVIRONMENT flbt
+%ENVIRONMENT REGOPE
+%INCLUDE klevccdf
+%INCLUDE klevkeys
+%INCLUDE klevkmsk
+-------------------------------------------------------------------------------
+VAR
+file_var   : FILE
+STATUS  : INTEGER
+entry   : INTEGER
+cur_pos: XYZWPR
+c_real_array : ARRAY[6] OF REAL  -- REAL Array
+indx   : INTEGER    --for counter
+
+CONST
+
+MOVE_PREG = 90			-- POS Register Number wich will be used to store the JointPos
+WRITE_FLAG = 199
+READ_FLAG = 200
+-------------------------------------------------------------------------------
+BEGIN
+indx = 1	
+FORCE_SPMENU(TP_PANEL,SPI_TPUSER,1)
+WRITE TPDISPLAY (CHR(128),CHR(137))
+SET_FILE_ATR(file_var, ATR_IA)
+-- set the server port before doing a connect
+SET_VAR(entry, '*SYSTEM*','$HOSTS_CFG[3].$SERVER_PORT',59004,STATUS)
+WRITE TPDISPLAY('Connecting..',CR)
+MSG_CONNECT('S3:',STATUS)
+WRITE TPDISPLAY(' CONNECT STATUS = ',STATUS,CR)
+IF STATUS = 0 THEN
+-- Open S3:
+   WRITE TPDISPLAY('Opening',CR)
+--   FOR tmp_int1 = 1 TO 20 DO
+      OPEN FILE file_var ('rw','S3:')
+      STATUS = IO_STATUS(file_var)
+      WRITE TPDISPLAY(STATUS,CR)
+      IF STATUS = 0 THEN
+-- write an integer
+              WRITE TPDISPLAY('Reading',CR)
+              cur_pos = CURPOS(0,0)
+             	WRITE TPDISPLAY('Cartesian Positions:', cur_pos, CR)
+             	c_real_array[1] = cur_pos.X
+             	WRITE TPDISPLAY('X =', cur_pos.X , CR)
+              WRITE TPDISPLAY('realX =', c_real_array[1] , CR)
+             	
+             	c_real_array[2] = cur_pos.Y
+             	WRITE TPDISPLAY('Y =', cur_pos.Y , CR)
+             	WRITE TPDISPLAY('realY =', c_real_array[2] , CR)
+             	
+             	c_real_array[3] = cur_pos.Z
+             	WRITE TPDISPLAY('Z =', cur_pos.Z , CR)
+             WRITE TPDISPLAY('realZ =', c_real_array[3] , CR)
+             
+             	c_real_array[4] = cur_pos.W
+             	WRITE TPDISPLAY('W =', cur_pos.W , CR)
+
+             	
+             	c_real_array[5] = cur_pos.P
+             	WRITE TPDISPLAY('P =', cur_pos.P , CR)
+             	
+             	c_real_array[6] = cur_pos.R
+             	WRITE TPDISPLAY('R =', cur_pos.R , CR)
+
+             	
+              FOR indx = 1 TO 6 DO
+      			--WRITE TPDISPLAY('send jpos real array[',indx,']:', CR)
+     	  		--WRITE TPDISPLAY(c_real_array[indx], CR)
+    	     		WRITE file_var(c_real_array[indx], CR)
+              ENDFOR
+
+
+       CLOSE FILE file_var
+ENDIF
+--ENDFOR
+WRITE TPDISPLAY('Disconnecting..',CR)
+MSG_DISCO('S3:',STATUS)
+WRITE TPDISPLAY('Done.',CR)
+SET_INT_REG(WRITE_FLAG, 1, STATUS)
+SET_INT_REG(READ_FLAG, 0, STATUS)
+ENDIF
+END test_read_c

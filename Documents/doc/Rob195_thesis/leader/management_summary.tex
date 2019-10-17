@@ -1,0 +1,14 @@
+\chapter*{Management Summary}
+\label{chap:managementSummary}
+\setstretch{1.5}
+
+This is the Bachelor Thesis "Rob 195 - Automated Object Detection in a Collaborative Robot Workspace" in the degree course Micro and Medical Technologies at the Bern University of Applied Sciences. The intention of the thesis is to improve the safety in collaborative robotic systems by detecting and avoiding collisions between the robot
+and objects in its workspace. 
+
+This has been realised by creating an occupancy grid of the robots workspace, using two cameras to monitor the robots workspace. By simulating the planned robot movements inside the occupancy grid by casting rays between the current robot position and the goal position and checking for occupied cells in its way.
+
+The project has been realized using the Fanuc CR-35iA cobot. As camera the Asus Xtion PRO LIVE has been chosen. The program is written in C++ using mainly the Point Cloud Library and the Octomap Library. Programs which are running on the robot were programmed using Roboguide, Fanuc's programming Software. 
+
+The function of the programm has been tested on a pick and place application where the robot has to move two objects on the table. Collisions are avoided by moving over the objects obstructing the path.
+
+For an industrial use, a more stable interface (e.g. Ethernet) needs to be used to connect the cameras to the system. Also more than two cameras are suggested in order to avoid shadows from the robot over any potential obstacle inside the workspace and thus losing necessary data to prevent a collision. The collision avoidance system further needs to be improved to detect collision for the whole robot body and not only for the tool centre point.

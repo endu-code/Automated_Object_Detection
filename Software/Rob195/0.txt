@@ -1,0 +1,15 @@
+  --set up telnet conn
+    local ip = '147.87.144.251';
+    local port = 23; -- TELNET
+    local sock = require('socket');
+    local serv, err = sock.connect(ip, port);
+    local action = 0
+    --actuation
+    serv:send('kcl\r');
+    sock.sleep(0.15);
+    serv:send('roblol\r');
+    sock.sleep(0.15);
+    serv:send('set port rdo[7]='.. action.. '\r');
+    sock.sleep(0.25);
+    serv:close();
+

@@ -1,0 +1,26 @@
+                       TP Accounting
+
+F Number: F00000    
+VERSION : HandlingTool         
+$VERSION: V8.30261      5/21/2018
+DATE:     14-JAN-19 09:04 
+
+Menu                         Elapsed Time         #Sel       #Keys
+                     (YY-MM-DD HH:MM:SS)
+Id:  962, 1                          08            1           2
+Id:  936, 1                          16            1           0
+Hints                                00            2           0
+DCS                               24:14            3          12
+Id:  381, 5                          46            3           1
+EDIT                              01:06            1          29
+
+Full Menus:                       26:30 
+Quick Menus:                         00 
+
+MENU Popup:                                        2
+[ TYPE ] Pullup:                                   0
+
+Functions at COLD start
+
+Functions at CTRL start
+START (COLD)                                       1

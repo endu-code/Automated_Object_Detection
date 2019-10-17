@@ -1,0 +1,33 @@
+\chapter*{Management Summary}
+\label{chap:managementSummary}
+\setstretch{1.5}
+The present document is the preliminary study to the Bachelor Thesis "Rob 195 - Automated Object Detection in a Collaborative Robot Workspace" in the degree course Micro and Medical Technologies at the Bern University of Applied Sciences.
+The purpose of the Bachelor Thesis is to improve the safety in collaborative robotic systems by avoiding collisions between the robot and objects in its workspace. This should be realized by integrating a vision system to detect objects in the planned trajectories of the robot. The input on this vision system is delivered by a commercially available camera which delivers its gathered data via point cloud data to the system. The system then compares the workspace and its occupied parts with the planned motion of the robot. The robot, used for this project is the Fanuc CR35iA Cobot which is located at the the department AHB of the Bern University of Applied Sciences in Biel. Using the data which the system shall provide, the Robot should calculate an alternative route to its initial end coordinates without colliding with the object which was detected in the workspace. In addition, a safety stop, based on a minimal distance to an object shall be integrated in the system. 
+
+During the execution of the preliminary study, the following tasks have been performed:
+\setstretch{1.0}
+\begin{itemize}
+	\item Time planning of the preliminary study.
+	\item Literature review.
+	\item Familiarize and setup of programming environment.
+	\item Selection and commission of parts for test-setup.
+	\item Familiarize with the robot and its interface.
+	\item Project Plan based on milestones for the Bachelor Thesis.
+\end{itemize}
+\setstretch{1.5}
+As the initial planned GPU-Voxels algorithm did not work, the author therefore decided to proceed with a point cloud based system. For the communication between Robot and System the TCP/IP Protocol has been chosen. \newpage
+
+To realize the goals which are set for the Bachelor Thesis, the following milestones have been defined:
+\setstretch{1.0}
+\begin{itemize}
+	\item M1: Running programming environment
+	\item M2: Robot communication
+	\item M3: Scanning of workspace
+	\item M4: Simple 2D Motion Planning. End-effector only
+	\item M5: Simple 3D Motion Planning. End-effector only
+	\item M6: Collision detection for whole robot model
+	\item M7: Collision detection in a dynamic workspace
+\end{itemize}
+
+Milestone 1 to 4 define the bare minimum of requirements which the Bachelor Thesis has to fulfill. The fulfillment of all 7 Milestones would indicate the best possible solution within the context of this Thesis. 
+

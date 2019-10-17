@@ -1,0 +1,30 @@
+PMTK log
+------------------------------
+13-FEB-19 13:48  : Starting PMTK
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : ef2 handle FFFFFFFF 4BF09F5F
+13-FEB-19 13:48  : [PMTK] init stat = 0x3E8
+13-FEB-19 13:48  : [PMTK] R np 2, crc 0xC20EF0A2
+13-FEB-19 13:48  : I np 7, slot 0, typ C inoff 0 insiz 5 outoff 0 outsiz 1
+13-FEB-19 13:48  : M np 7, mslot 0, typ D inoff 0 insiz 4 outoff 0 outsiz 0
+13-FEB-19 13:48  : M np 7, mslot 1, typ D inoff 4 insiz 1 outoff 0 outsiz 0
+13-FEB-19 13:48  : M np 7, mslot 2, typ D inoff 5 insiz 0 outoff 0 outsiz 1
+13-FEB-19 13:48  : [PMTK] R np 2, crc 0x11F7942A
+13-FEB-19 13:48  : I np 7, slot 0, typ D inoff 0 insiz 16 outoff 0 outsiz 16
+13-FEB-19 13:48  : M np 7, mslot 1, typ D inoff 0 insiz 16 outoff 0 outsiz 0
+13-FEB-19 13:48  : M np 7, mslot 2, typ D inoff 16 insiz 0 outoff 0 outsiz 16
+13-FEB-19 13:48  : [SSCN] chnl 1 slot 1, din 5,  dout 1, ain 0 aout 0
+13-FEB-19 13:48  : [SSCN] chnl 2 slot 1, din 16,  dout 16, ain 0 aout 0
+13-FEB-19 13:48  : [PMTKSSCN] iosetscn scanrate 0x28
+
+
+PMSV log
+------------------------------

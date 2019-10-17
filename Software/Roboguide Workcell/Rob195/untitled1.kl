@@ -1,0 +1,89 @@
+-- This material is the joint property of Fanuc Robotics Corporation and
+-- FANUC LTD Japan, and must be returned to either Fanuc Robotics
+-- Corporation or FANUC LTD Japan immediately upon request. This material
+-- and the information illustrated or contained herein may not be
+-- reproduced, copied, used, or transmitted in whole or in part in any way
+-- without the prior written consent of both Fanuc Robotics and FANUC.
+--
+-- All Rights Reserved
+-- Copyright (C) 2000
+-- Fanuc Robotics Corporation
+-- FANUC LTD Japan
+-- Karel is a registered trademark of
+-- Fanuc Robotics Corporation
+-- +
+-- Program: tcpserv3.kl - Program for TCP Messaging
+--
+-- Description:
+--
+-- This program serves as an example on how to use TCP messaging and write
+-- a server Karel program.
+--
+-- Authors: Fanuc Robotics Corporation
+-- 3900 West Hamlin
+-- Rochester Hills, MI 48309
+--
+-- Modification history:
+--
+-------------------------------------------------------------------------------
+PROGRAM tcpserv3
+%STACKSIZE = 4000
+%NOLOCKGROUP
+%NOPAUSE=ERROR+COMMAND+TPENABLE
+%ENVIRONMENT uif
+%ENVIRONMENT sysdef
+%ENVIRONMENT memo
+%ENVIRONMENT kclop
+%ENVIRONMENT bynam
+%ENVIRONMENT fdev
+%ENVIRONMENT flbt
+%INCLUDE klevccdf
+%INCLUDE klevkeys
+%INCLUDE klevkmsk
+-------------------------------------------------------------------------------
+VAR
+file_var : FILE
+tmp_int : INTEGER
+tmp_int1 : INTEGER
+tmp_str : STRING[128]
+tmp_str1 : STRING[128]
+status : INTEGER
+entry : INTEGER
+-------------------------------------------------------------------------------
+BEGIN
+SET_FILE_ATR(file_var, ATR_IA)
+-- set the server port before doing a connect
+SET_VAR(entry, ’*SYSTEM*’,’$HOSTS_CFG[3].$SERVER_PORT’,59002,status)
+WRITE(’Connecting..’,CR)
+MSG_CONNECT(’S3:’,status)
+WRITE(’ CONNECT Status = ’,status,CR)
+IF status = 0 THEN
+-- Open S3:
+WRITE (’Opening’,CR)
+FOR tmp_int1 = 1 TO 20 DO
+OPEN FILE file_var (’rw’,’S3:’)
+status = IO_STATUS(file_var)
+WRITE (status,CR)
+IF status = 0 THEN
+-- write an integer
+FOR tmp_int = 1 TO 1000 DO
+WRITE(’Reading’,CR)
+-- Read 10 bytes
+BYTES_AHEAD(file_var, entry, status)
+WRITE(entry, status, CR)
+READ file_var (tmp_str::10)
+status = IO_STATUS(file_var)
+WRITE (status, CR)
+-- Write 10 bytes
+WRITE (tmp_str::10, CR)
+status = IO_STATUS(file_var)
+WRITE (status, CR)
+ENDFOR
+CLOSE FILE file_var
+ENDIF
+ENDFOR
+WRITE(’Disconnecting..’,CR)
+MSG_DISCO(’S3:’,status)
+WRITE(’Done.’,CR)
+ENDIF
+END tcpserv3

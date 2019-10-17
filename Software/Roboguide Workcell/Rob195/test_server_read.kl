@@ -1,0 +1,71 @@
+PROGRAM test_read
+%STACKSIZE = 4000
+%NOLOCKGROUP
+%NOPAUSE=ERROR+COMMAND+TPENABLE
+%ENVIRONMENT uif
+%ENVIRONMENT sysdef
+%ENVIRONMENT memo
+%ENVIRONMENT kclop
+%ENVIRONMENT bynam
+%ENVIRONMENT fdev
+%ENVIRONMENT flbt
+%INCLUDE klevccdf
+%INCLUDE klevkeys
+%INCLUDE klevkmsk
+-------------------------------------------------------------------------------
+VAR
+file_var   : FILE
+joint_pos_fi : FILE     --File to store joint positions
+tmp_int   : INTEGER
+tmp_int1  : INTEGER
+tmp_str   : STRING[128]
+tmp_str1  : STRING[128]
+STATUS  : INTEGER
+STATUS_J : INTEGER
+entry   : INTEGER
+cur_j_pos_ : JOINTPOS     -- current position of robot joints
+stat_   : INTEGER     -- status variable
+real_array : ARRAY[6] OF REAL  -- REAL Array
+indx   : INTEGER    --for counter
+-------------------------------------------------------------------------------
+BEGIN
+FORCE_SPMENU(TP_PANEL,SPI_TPUSER,1)
+WRITE TPDISPLAY (CHR(128),CHR(137))
+SET_FILE_ATR(file_var, ATR_IA)
+SET_FILE_ATR(joint_pos_fi, ATR_IA)
+-- set the server port before doing a connect
+SET_VAR(entry, '*SYSTEM*','$HOSTS_CFG[3].$SERVER_PORT',59002,STATUS)
+WRITE TPDISPLAY('Connecting..',CR)
+MSG_CONNECT('S3:',STATUS)
+WRITE TPDISPLAY(' CONNECT STATUS = ',STATUS,CR)
+IF STATUS = 0 THEN
+-- Open S3:
+   WRITE TPDISPLAY('Opening',CR)
+--   FOR tmp_int1 = 1 TO 20 DO
+      OPEN FILE file_var ('rw','S3:')
+      STATUS = IO_STATUS(file_var)
+      OPEN FILE joint_pos_fi('rw','S3')
+      STATUS_J = IO_STATUS(joint_pos_fi)
+      WRITE TPDISPLAY(STATUS,CR)
+      IF STATUS = 0 THEN
+-- write an integer
+             WRITE TPDISPLAY('Reading',CR)
+             cur_j_pos_ = CURJPOS(0,0)
+             WRITE TPDISPLAY('Joint Positions:', cur_j_pos_, CR)
+             CNV_JPOS_REL(cur_j_pos_, real_array, stat_)
+ FOR indx = 1 TO 6 DO
+                WRITE TPDISPLAY(real_array[indx], CR)
+      		  WRITE TPDISPLAY('send jpos real array[',indx,']:', CR)
+     	  	  WRITE TPDISPLAY(real_array[indx], CR)
+    	         WRITE file_var(real_array[indx], CR)
+ ENDFOR
+
+       CLOSE FILE file_var
+       CLOSE FILE joint_pos_fi
+ENDIF
+--ENDFOR
+WRITE TPDISPLAY('Disconnecting..',CR)
+MSG_DISCO('S3:',STATUS)
+WRITE TPDISPLAY('Done.',CR)
+ENDIF
+END test_read

@@ -1,0 +1,12 @@
+{Basic}
+
+[PROGRAM]
+NAME = "TRANSROT"
+ARGUMENT = '5'
+[ARGUMENT]
+N01 = "Pick Pos PR"
+N02 = "Original Ofs VR"
+N03 = "Translation VR"
+N04 = "Rotation VR"
+N05 = "Status R"
+[ENDPROGRAM]
